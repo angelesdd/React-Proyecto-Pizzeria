@@ -13,8 +13,8 @@ function App() {
   return (
     <>
       <NavBar/>
-      <Carta/>
       <ItemListContainer titulo={"🚨 Atención 🚨"} mensaje={"Estamos actualizando el Sitio Web. Regresamos en unos minutos."} />
+      <Carta/>
     </>
   )
 }
