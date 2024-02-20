@@ -20,18 +20,22 @@ const Cart = () => {
     }
 
     return(
-        <div className="container">
+        <div className="container" style={{ padding: '15vh'}}>
                 <div className="row">
                     <div className="col text-center">
                         <h1>Productos Seleccionados</h1>
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col text-center">
+                <div className="row" style={{ padding: '6vh'}}>
+                    <div className="col">
                         <table className="table">
                             <tbody>
+                                <tr>
+                                    <td colSpan={5}></td>
+                                    <td className="text-center"><a href="#" onClick={clear} className="btn btn-warning">Vaciar Carrito <img src={Trash} alt="Eliminar Producto" title="Eliminar Producto" /></a></td>
+                                </tr>
                                 {cart.map(product =>
-                                    <tr key={product.id}>
+                                    <tr className="text-center" key={product.id}>
                                         <td><img src={product.image} alt={product.title} width={80} /></td>
                                         <td>{product.title}</td>
                                         <td>${product.price}</td>
@@ -40,10 +44,12 @@ const Cart = () => {
                                         <td><a href="#" onClick={() => {removeItem(product.id)}}><img src={Trash} alt="Eliminar Producto" title="Eliminar Producto"  /></a></td>
                                     </tr>
                                 )}
-                                <tr>
-                                    <td colSpan={4}>Total</td>
-                                    <td>${SumaTotalProductos()}</td>
-                                    
+                                <tr className="text-center">
+                                    <td></td>
+                                    <td className="text-start align-middle">Total</td>
+                                    <td className="text-start align-middle">${SumaTotalProductos()}</td>
+                                    <td colSpan={2}></td>
+                                    <td className="text-end align-middle"><Link to={"/checkout"} className="btn btn-warning">Finalizar</Link></td>                          
                                 </tr>
                             </tbody>
                         </table>

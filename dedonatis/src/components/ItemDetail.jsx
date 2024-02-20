@@ -11,7 +11,7 @@ const ItemDetail = ({item}) => {
 
 
         return (
-            <div className="container p-4 my-5 mx-auto border border-dark rounded shadow-lg">
+            <div className="container p-4 mx-auto border border-dark rounded shadow-lg" style={{ margin: '15vh'}}>
                 <div className="row">
                     <div className="col-md-4">
                         <img src={item.image} alt={item.title} className="img-fluid" />
