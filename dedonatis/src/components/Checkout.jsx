@@ -1,7 +1,6 @@
 import { useContext, useState } from "react";
 import { CartContext } from "./context/CartContext";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
-import { Link } from "react-router-dom";
 
 const Checkout = () => {
     const [nombre, setNombre] = useState();
@@ -94,7 +93,7 @@ const Checkout = () => {
             : ""}
             <div className="row my-5">
                 <div className="col text-center">
-                    {orderId ? <div class="alert alert-warning p-5 text-center" role="alert">
+                    {orderId ? <div className="alert alert-warning p-5 text-center" role="alert">
                         <p className="display-1"></p>
                         <h1>Gracias por tu Compra!</h1>
                         <p>Tu ID de Compra es: <b>{orderId}</b></p>
